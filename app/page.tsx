@@ -1,5 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Card from '@/components/ui/card'
 import {formatAddress} from "@/lib/utils"
 const user = {
@@ -158,9 +158,9 @@ export default function Example() {
                   type="button"
                   className="relative rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
                 >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon aria-hidden="true" className="size-6" />
+                  {/* <span className="absolute -inset-1.5" /> */}
+                  {/* <span className="sr-only">View notifications</span> */}
+                  {/* <BellIcon aria-hidden="true" className="size-6" /> */}
                 </button>
 
                 {/* Profile dropdown */}
@@ -233,9 +233,9 @@ export default function Example() {
                   type="button"
                   className="relative ml-auto shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
                 >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon aria-hidden="true" className="size-6" />
+                  {/* <span className="absolute -inset-1.5" /> */}
+                  {/* <span className="sr-only">View notifications</span> */}
+                  {/* <BellIcon aria-hidden="true" className="size-6" /> */}
                 </button>
               </div>
               <div className="mt-3 space-y-1">
