@@ -3,14 +3,16 @@ import { useState } from "react";
 import { PhotoIcon } from "@heroicons/react/24/solid";
 
 export default function Mint() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e: { target: { files: any[]; }; }) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = (evt) => {
-        setSelectedImage(evt.target.result);
+        if (evt.target && evt.target.result) {
+          setSelectedImage(evt.target.result as string);
+        }
       };
       reader.readAsDataURL(file);
     }
