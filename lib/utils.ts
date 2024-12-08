@@ -11,6 +11,10 @@ const core = new Core({
   projectId: process.env.PROJECT_ID,
 });
 
+export const formatAddress = (addr: string | undefined) => {
+  return `${addr?.substring(0, 8)}...`;
+};
+
 export const walletKit = await WalletKit.init({
   core, // <- pass the shared `core` instance
   metadata: {

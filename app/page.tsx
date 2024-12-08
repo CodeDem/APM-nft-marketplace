@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Card from '@/components/ui/card'
+import {formatAddress} from "@/lib/utils"
 const user = {
   name: '0x195242Cf87fFcC2C94475a5814e13b53C035fFA9',
   // email: 'tom@example.com',
@@ -225,7 +226,7 @@ export default function Example() {
                   <img alt="" src={user.imageUrl} className="size-10 rounded-full" />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">{user.name}</div>
+                  <div className="text-base font-medium text-gray-800">{formatAddress(user.name)}</div>
                   {/* <div className="text-sm font-medium text-gray-500">{user.email}</div> */}
                 </div>
                 <button
