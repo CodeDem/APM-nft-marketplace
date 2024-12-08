@@ -32,12 +32,10 @@ export default function Example() {
               <div className="flex">
                 <div className="flex shrink-0 items-center">
                   <img
-                    alt="Your Company"
                     src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                     className="block h-8 w-auto lg:hidden"
                   />
                   <img
-                    alt="Your Company"
                     src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                     className="hidden h-8 w-auto lg:block"
                   />
@@ -76,7 +74,7 @@ export default function Example() {
                     <MenuButton className="relative flex max-w-xs items-center rounded-full bg-white text-sm focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <img alt="" src="https://api.dicebear.com/9.x/bottts/svg" className="size-8 rounded-full" />
+                      <img  src="https://api.dicebear.com/9.x/bottts/svg" className="size-8 rounded-full" />
                     </MenuButton>
                   </div>
                   <MenuItems
@@ -130,7 +128,7 @@ export default function Example() {
             <div className="border-t border-gray-200 pt-4 pb-3">
               <div className="flex items-center px-4">
                 <div className="shrink-0">
-                  <img alt="" src={user.imageUrl} className="size-10 rounded-full" />
+                  <img  src={user.imageUrl} className="size-10 rounded-full" />
                 </div>
                 <div className="ml-3">
                   <div className="text-base font-medium text-gray-800">{formatAddress(user.name)}</div>

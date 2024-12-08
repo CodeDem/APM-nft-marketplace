@@ -20,7 +20,7 @@ export default function Card({ product }: { product: Product }) {
       className="group relative drop-shadow-md border-2 p-2 rounded-md"
     >
       <img
-        alt={product.imageAlt}
+        // alt={product.imageAlt}
         src={product.imageSrc}
         className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto"
       />
