@@ -1,6 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Card from '@/components/ui/card'
 import {formatAddress} from "@/lib/utils"
 const user = {
   name: '0x195242Cf87fFcC2C94475a5814e13b53C035fFA9',
@@ -17,90 +16,6 @@ const userNavigation = [
   { name: 'Disconnect', href: '#' },
 ]
 
-const generateSeed = () => {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
-  for (let i = 0; i < 5; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return result;
-}
-
-const NFTs = [
-  {
-    id : '1',
-    name: "NFT 1",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '2',
-    name: "NFT 2",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '3',
-    name: "NFT 3",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '4',
-    name: "NFT 4",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '5',
-    name: "NFT 5",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '6',
-    name: "NFT 6",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '7',
-    name: "NFT 7",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  },
-  {
-    id : '8',
-    name: "NFT 8",
-    imageAlt: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    imageSrc: `https://api.dicebear.com/9.x/bottts/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${generateSeed()}`,
-    href: "#",
-    color: "Blue",
-    price: "0.1 ETH"
-  }
-]
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
@@ -110,14 +25,6 @@ function classNames(...classes: string[]) {
 export default function Example() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="border-b border-gray-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -258,17 +165,12 @@ export default function Example() {
           <header>
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <h1 className="text-3xl font-bold tracking-tight text-gray-900">NFTs for Sale</h1>
-              <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {
-                NFTs.map((product) => (
-                  <Card product={product} key={product.id} />
-                ))
-              }
-              </div>
             </div>
           </header>
           <main>
-            <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">{/* Your content */}</div>
+            <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+
+            </div>
           </main>
         </div>
       </div>
