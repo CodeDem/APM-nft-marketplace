@@ -5,15 +5,19 @@ import { PhotoIcon } from "@heroicons/react/24/solid";
 export default function Mint() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const handleFileChange = (e: { target: { files: any[]; }; }) => {
-    const file = e.target.files[0];
-    if (file) {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const file = files[0];
       const reader = new FileReader();
+
       reader.onload = (evt) => {
         if (evt.target && evt.target.result) {
+          // Ensure setSelectedImage accepts a string
           setSelectedImage(evt.target.result as string);
         }
       };
+
       reader.readAsDataURL(file);
     }
   };
@@ -99,17 +103,16 @@ export default function Mint() {
                     </label>
                     <p className="pl-1">or drag and drop</p>
                   </div>
-                  <p className="text-xs text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                  <p className="text-xs text-gray-600">
+                    PNG, JPG, GIF up to 10MB
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
-          <button
-            type="button"
-            className="text-sm font-semibold text-gray-900"
-          >
+          <button type="button" className="text-sm font-semibold text-gray-900">
             Cancel
           </button>
           <button

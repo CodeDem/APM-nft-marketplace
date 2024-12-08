@@ -31,8 +31,7 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
 
-    const host =
-    typeof window !== "undefined" ? window.location.host : "defaultHost";
+    const host = typeof window !== "undefined" ? window.location.host : "defaultHost";
 
   const sdkOptions = {
     logging: { developerMode: false },
@@ -43,7 +42,7 @@ export default function Navbar() {
     },
     infuraAPIKey: "6e92d504c1d74283943a00c20595bcfd",
   };
-  const path = window.location.pathname; // Returns path only
+  const path =  typeof window !== "undefined" ? window.location.pathname : ""; // Returns path only
   const segments = path.split('/').filter(Boolean);
 
   return (
